@@ -11,7 +11,7 @@ public static class LightSwitch
         int x = int.Parse(lines[0]);
         int size = lines.GetLength(0);
         int numElements = size - 1;
-        lightSwitch = new bool[x];
+        bool[] lightSwitch = new bool[x];
         for (int i = 0; i < x; i++)
             lightSwitch[i] = false;
 
@@ -20,8 +20,8 @@ public static class LightSwitch
         for (int i = 1; i < numElements; i++)
         {
             string[] words = lines[i].Split(' ');
-            start[i - 1] = int.Parse(words[0]);
-            end[i - 1] = int.Parse(words[1]);
+            starts[i - 1] = int.Parse(words[0]);
+            ends[i - 1] = int.Parse(words[1]);
         }
         return numOn(x, starts, ends);
     }
